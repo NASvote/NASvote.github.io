@@ -127,10 +127,10 @@ Look up votes
     var intervalQuery; //periodically query tx results
     
 	var options = {
-			callback: NebPay.config.testnetUrl  //to tell app where to send tx result, and tell queryPayInfo where to query tx result. We are using the testnet
+			callback: NebPay.config.mainnetUrl  //to tell app where to send tx result, and tell queryPayInfo where to query tx result. We are using the mainnet
 		}        	
 
-	var dappAddress = "n1nhq6g7Z3vK61MQ9fDaoLfxhxqaDtvSbES";
+	var dappAddress = "n22JbTGrgMJVgedK7CcWWjJsJQevddvd4Ag";
 		
     //initiate the transaction with a button click, here is an example of calling a smart contract
     function vote() {        
@@ -165,7 +165,7 @@ Look up votes
 		var nebulas = require("nebulas"),
 			Account = nebulas.Account,
 			neb = new nebulas.Neb();
-		neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+		neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
 
 		var from = Account.NewAccount().getAddressString();
 		var to = dappAddress;   //the smart contract address of your Dapp
@@ -193,7 +193,7 @@ Look up votes
 		var nebulas = require("nebulas"),
 			Account = nebulas.Account,
 			neb = new nebulas.Neb();
-		neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+		neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io"));
 
 		var from = Account.NewAccount().getAddressString();
 		var to = dappAddress;   //the smart contract address of your Dapp
