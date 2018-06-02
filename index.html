@@ -76,6 +76,28 @@
 		margin: 0 auto;
 		font-size: 24px;
 	}
+
+	#loader {
+		border: 16px solid #f3f3f3;
+		border-radius: 50%;
+		border-top: 16px solid #3498db;
+		width: 120px;
+		height: 120px;
+		-webkit-animation: spin 2s linear infinite; /* Safari */
+		animation: spin 2s linear infinite;
+	}
+
+	/* Safari */
+	@-webkit-keyframes spin {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+
 	
 </style>
 </head>
@@ -256,6 +278,8 @@ Look up votes
 		
 		$("#removable").append($("<h3>The results of election \"" + what + "\": </h3>"));
 		
+		$("#removable").append($("<div id=\"loader\"></div>"));
+		
 		var candidates = [];
 		var voteCount = [];
 		
@@ -288,7 +312,9 @@ Look up votes
 					var tmp = voteCount[i]; voteCount[i] = voteCount[j]; voteCount[j] = tmp;
 					tmp = candidates[i]; candidates[i] = candidates[j]; candidates[j] = tmp;
 				}
-			
+
+		$("#loader").remove();
+				
 		$("#removable").append($("<ol id=\"resultslist\"> </ol>"));
 		
 		for (var i = 0; i < n; ++i)
