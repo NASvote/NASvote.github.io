@@ -313,7 +313,7 @@ Look up votes
 		// sort the votes
 		for (var i = 0; i < n; ++i)
 			for (var j = i+1; j < n; ++j)
-				if (voteCount[i] < voteCount[j])
+				if (parseInt(voteCount[i], 10) < parseInt(voteCount[j], 10))
 				{
 					var tmp = voteCount[i]; voteCount[i] = voteCount[j]; voteCount[j] = tmp;
 					tmp = candidates[i]; candidates[i] = candidates[j]; candidates[j] = tmp;
